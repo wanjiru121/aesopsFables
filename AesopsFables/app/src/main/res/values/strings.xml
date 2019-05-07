@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Aesops Fables</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_fable1_note">Fable1NoteActivity</string>
+    <string name="title_activity_the_lionandthe_statue_fable">TheLionandtheStatueFable</string>
+    <string name="title_activity_the_buffoonandthe_countryman_fable">
+
+
+        TheBuffoonandtheCountrymanFable
+    </string>
+    <string name="title_activity_the_boysandthe_frogs">The Boys and the Frogs</string>
+    <string name="title_activity_the_cockandthe_jewel">The Cock and the Jewel</string>
+    <string name="title_activity_the_old_hound">The Old Hound</string>
+    <string name="title_activity_the_assandthe_charger">The Ass and the Charger</string>
+    <string name="title_activity_the_labourerandthe_nightingale_fable">The Labourer and the
+        Nightingale Fable
+    </string>
+    <string name="title_activity_herculesandthe_waggoner_fable">Hercules and the Waggoner Fable
+    </string>
+    <string name="title_activity_the_manandthe_wood_fable">The Man and the Wood Fable</string>
+    <string name="title_activity_the_lionandthe_boar">The Lion and the Boar</string>
+    <string name="title_activity_the_bellyandthe_members_fable">The Belly and the Members Fable
+    </string>
+    <string name="title_activity_the_manandthe_wooden_god_fable">The Man and the Wooden God Fable
+    </string>
+
+
+</resources>
+
+

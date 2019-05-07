@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.aesopsfables">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".TheManandtheWoodenGodFable"
+            android:label="@string/title_activity_the_manandthe_wooden_god_fable"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aesopsfables.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TheBellyandtheMembersFable"
+            android:label="@string/title_activity_the_bellyandthe_members_fable"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aesopsfables.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TheLionandtheBoar"
+            android:label="@string/title_activity_the_lionandthe_boar"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aesopsfables.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TheManandtheWoodFable"
+            android:label="@string/title_activity_the_manandthe_wood_fable"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TheLabourerandtheNightingaleFable"
+            android:label="@string/title_activity_the_labourerandthe_nightingale_fable"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TheAssandtheCharger"
+            android:label="@string/title_activity_the_assandthe_charger"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aesopsfables.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TheOldHound"
+            android:label="@string/title_activity_the_old_hound"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aesopsfables.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TheCockandtheJewel"
+            android:label="@string/title_activity_the_cockandthe_jewel"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aesopsfables.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TheBoysandtheFrogs"
+            android:label="@string/title_activity_the_boysandthe_frogs"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aesopsfables.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

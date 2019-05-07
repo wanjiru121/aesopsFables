@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AesopsFablesRedo</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_bellingthe_cat_fable">BellingtheCatFable</string>
+    <string name="title_activity_the_ass_brains_fable">TheAssBrainsFable</string>
+    <string name="title_activity_the_camelandthe_arab">TheCamelandtheArab</string>
+    <string name="title_activity_the_monkeyandthe_dolphin">TheMonkeyandtheDolphin</string>
+    <string name="title_activity_the_lionin_love_fable">TheLioninLoveFable</string>
+    <string name="title_activity_the_miserand_his_gold_fable">TheMiserandHisGoldFable</string>
+    <string name="title_activity_androcles_fable">AndroclesFable</string>
+</resources>
