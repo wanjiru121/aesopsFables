@@ -1,15 +1,24 @@
 package com.example.shee;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.shee.database.DatabaseHelper;
+import com.example.shee.database.Note;
 
 public class AddNoteActivity extends AppCompatActivity {
     EditText etTitle;
@@ -17,6 +26,10 @@ public class AddNoteActivity extends AppCompatActivity {
     Button btnAddPhoto;
     Button btnAddVoiceNote;
     Button btnSave;
+    String title;
+    String noteText;
+
+    private static final int CAPTURE_IMAGE_REQUEST_CODE = 161;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +42,42 @@ public class AddNoteActivity extends AppCompatActivity {
         btnAddPhoto = findViewById(R.id.btnAddPhoto);
         btnAddVoiceNote = findViewById(R.id.btnAddVoiceNote);
         btnSave = findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                title = etTitle.getText().toString();
+                noteText = etNote.getText().toString();
+                Note note = new Note(title,noteText);
+                DatabaseHelper databaseHelper = new DatabaseHelper(getBaseContext(),"notes",null,1);
+                long insert = databaseHelper.insertNote(note);
+                Log.d("insertnote","note insertion value" + insert);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//                Log.d("title",title);
+//                Log.d("note",note);
+            }
+        });
+        btnAddPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,CAPTURE_IMAGE_REQUEST_CODE);
+
+            }
+        });
+
+      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
-    btnSave.setOnClickListener(new View.OnClickListener()
 
-    {
-        @Override
-                public Void(View v) {
-        Con
-
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CAPTURE_IMAGE_REQUEST_CODE && resultCode == RESULT_OK){
+            Bundle bundle = data.getExtras();
+            Bitmap bitmap = (Bitmap) bundle.get("data");
+            Log.d("data",bitmap.toString());
+        }
     }
+}
+
 

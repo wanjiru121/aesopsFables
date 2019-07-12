@@ -2,4 +2,10 @@
     <string name="app_name">shee</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_add_note">AddNoteActivity</string>
+    <string name="title_activity_view_note">ViewNoteActivity</string>
+    <string name="view_note">Lorem ipsum dolor sit amet,/n
+        consectetur adipisicing elit. Ad cupiditate dicta dolorem,/n
+        doloremque dolores eum fuga illo in magnam magni maiores neque /n
+        nisi obcaecati quis saepe, sapiente sunt tempore temporibus!</string>
+    <string name="title_activity_edit_note">EditNoteActivity</string>
 </resources>
