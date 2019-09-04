@@ -20,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE notes(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT,noteText TEXT)");
+        db.execSQL("CREATE TABLE notes(id INTEGER, title TEXT,noteText TEXT)");
 
     }
 
@@ -31,6 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public long insertNote(Note note){
        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("id", note.getId());
         contentValues.put("title",note.getTitle());
         contentValues.put("noteText",note.getNoteText());
         long insert = sqLiteDatabase.insert("notes",null,contentValues);
@@ -77,6 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public long updateNote(Note note){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("id", note.getId());
         contentValues.put("title",note.getTitle());
         contentValues.put("noteText",note.getNoteText());
 

@@ -16,12 +16,24 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.shee.adaptors.NotesAdapter;
 import com.example.shee.database.DatabaseHelper;
 import com.example.shee.database.Note;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
 //    Button btnViewNoteActivity;
       ListView listViewNames;
     List<Note> notesList;
+    String title;
+    String noteText;
+    int noteId;
+    int position;
+    private  String NOTE_API_URL = "https://akirachixnotesapi.herokuapp.com/api/v1/notes";
+    private  String TAG = "NOTES_API_RESPONSE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 //        displayNames();
-
+//        displayNotes();
+        //getNotes();
 
     }
     private void displayNotes(){
@@ -81,6 +100,62 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    private List<Note>getNotes(){
+        notesList = new ArrayList<Note>();
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,NOTE_API_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, response);
+
+                try {
+                    JSONArray jsonArray = new JSONArray(response);
+
+                    for (int i=0; i<jsonArray.length(); i++) {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                        int id = jsonObject.getInt("id");
+                        String myTitle = jsonObject.getString("title");
+                        String myNoteText = jsonObject.getString("noteText");
+                        Note notes = new Note(id, myTitle, myNoteText);
+                        notesList.add(notes);
+                    }
+
+                    NotesAdapter notesAdapter = new NotesAdapter(getBaseContext(), 0, notesList);
+                    listViewNames.setAdapter(notesAdapter);
+                    listViewNames.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                            Note clickedNote = notesList.get(i);
+                            Intent intent = new Intent(getBaseContext(), ViewNoteActivity.class);
+                            intent.putExtra("NOTE_ID", clickedNote.getId());
+                            startActivity(intent);
+                        }
+                    });
+                }
+                catch (Exception exception) {
+                    exception.printStackTrace();
+
+                }
+            }
+
+        }
+
+                , new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, error.getLocalizedMessage());
+            }
+        }) ;
+
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getBaseContext());
+        requestQueue.add(stringRequest);
+        return notesList;
+    };
+
+
+
+
     private void displayNames(){
         List<String> namesList = new ArrayList<String>();
         namesList.add("Rose Wanjiku");
@@ -120,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        displayNotes();
+        getNotes();
+//        displayNotes();
     }
 }

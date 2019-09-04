@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name..."
-        android:paddingTop="60dp"
+        android:paddingTop="50dp"
         app:layout_behavior = "@string/appbar_scrolling_view_behavior"
         />
     <EditText
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Age..."
-        android:paddingTop="100dp"
+        android:paddingTop="80dp"
         app:layout_behavior = "@string/appbar_scrolling_view_behavior"/>
     <Button
         android:id="@+id/btnSend"
@@ -48,7 +48,7 @@
         android:textAllCaps="true"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="100dp"/>
 
 </LinearLayout>
 
