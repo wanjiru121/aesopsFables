@@ -9,4 +9,5 @@
         nisi obcaecati quis saepe, sapiente sunt tempore temporibus!</string>
     <string name="title_activity_edit_note">EditNoteActivity</string>
     <string name="title_activity_voice_recorder">VoiceRecorderActivity</string>
+    <string name="title_activity_voice_note">VoiceNoteActivity</string>
 </resources>

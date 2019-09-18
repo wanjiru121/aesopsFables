@@ -14,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".VoiceNoteActivity"
+            android:label="@string/title_activity_voice_note"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.shee.MainActivity" />
+        </activity>
+        <activity
             android:name=".VoiceRecorderActivity"
             android:label="@string/title_activity_voice_recorder"
             android:parentActivityName=".MainActivity"

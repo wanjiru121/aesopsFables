@@ -87,6 +87,17 @@ public class AddNoteActivity extends AppCompatActivity {
             }
         });
 
+
+        btnAddVoiceNote = findViewById(R.id.btnAddVoiceNote);
+
+        btnAddVoiceNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(),VoiceRecorderActivity.class);
+                startActivity(intent);
+            }
+        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
